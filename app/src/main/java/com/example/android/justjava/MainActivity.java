@@ -27,7 +27,18 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
         display(quantity);
-        displayPrice(quantity*5);
+//        displayPrice(quantity*5);
+        TextView summaryName = findViewById(R.id.name_text_view);
+        TextView summaryQuantity = findViewById(R.id.quantity_sum_text_view);
+        TextView summaryPrice = findViewById(R.id.price_text_view);
+        TextView summaryThanks = findViewById(R.id.thanks_text_view);
+
+        summaryQuantity.setText("Quantity: " + quantity);
+        summaryPrice.setText("Total: $" + 5*quantity);
+
+        summaryName.setVisibility(view.VISIBLE);
+        summaryQuantity.setVisibility(view.VISIBLE);
+        summaryThanks.setVisibility(view.VISIBLE);
     }
 
     /**
@@ -36,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private void display(int number) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
         quantityTextView.setText("" + number);
+        displayPrice(5*quantity);
     }
 
     /**
