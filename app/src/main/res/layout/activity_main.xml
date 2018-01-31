@@ -12,6 +12,15 @@
         android:padding="16dp"
         tools:context="com.example.android.justjava.MainActivity">
 
+        <EditText
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:inputType="textShortMessage"
+            android:layout_margin="8dp"
+            android:textSize="16sp"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +37,8 @@
             android:layout_marginLeft="8dp"
             android:paddingLeft="24dp"
             android:text="Whipped cream"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:onClick="checkToppings"/>
 
         <CheckBox
             android:id="@+id/checkbox_chocolate"
@@ -38,7 +48,8 @@
             android:layout_marginLeft="8dp"
             android:paddingLeft="24dp"
             android:text="Chocolate"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:onClick="checkToppings"/>
 
         <TextView
             android:layout_width="match_parent"
