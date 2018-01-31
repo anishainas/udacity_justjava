@@ -29,13 +29,16 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
 
         CheckBox checkboxWhip = findViewById(R.id.checkbox_whip);
+        CheckBox checkboxChocolate = findViewById(R.id.checkbox_chocolate);
         TextView summary = findViewById(R.id.summary);
 
         String whippedCream = (checkboxWhip.isChecked())?"true":"false";
+        String chocolate = (checkboxChocolate.isChecked())?"true":"false";
 
         StringBuilder summaryMessage = new StringBuilder();
         summaryMessage.append("Name: Lyla Labyrinth");
         summaryMessage.append("\nAdd whipped cream? " + whippedCream);
+        summaryMessage.append("\nAdd chocolate? " + chocolate);
         summaryMessage.append("\nQuantity: " + quantity);
         summaryMessage.append("\nTotal: $" + quantity*5);
         summaryMessage.append("\nThank you!");
