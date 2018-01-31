@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity {
      */
     public void submitOrder(View view) {
 
+        if (quantity==0){
+            return;
+        }
+
         EditText inputName = findViewById(R.id.input_name);
         CheckBox checkboxWhip = findViewById(R.id.checkbox_whip);
         CheckBox checkboxChocolate = findViewById(R.id.checkbox_chocolate);
@@ -78,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
             quantity--;
             price-=5;
             display(quantity);
+            if (quantity==0){
+                displayPrice(0);
+            }
         }
     }
 
