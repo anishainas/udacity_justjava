@@ -29,25 +29,19 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
 
         CheckBox checkboxWhip = findViewById(R.id.checkbox_whip);
-//        display(quantity);
-//        displayPrice(quantity*5);
-        TextView summaryName = findViewById(R.id.summary_name);
-        TextView summaryWhip = findViewById(R.id.summary_whip);
-        TextView summaryQuantity = findViewById(R.id.summary_quantity);
-        TextView summaryPrice = findViewById(R.id.summary_price);
-        TextView summaryThanks = findViewById(R.id.summary_thanks);
+        TextView summary = findViewById(R.id.summary);
 
-        if (checkboxWhip.isChecked()){
-            summaryWhip.setText("Add whipped cream? true");
-        }
+        String whippedCream = (checkboxWhip.isChecked())?"true":"false";
 
-        summaryQuantity.setText("Quantity: " + quantity);
-        summaryPrice.setText("Total: $" + 5*quantity);
+        StringBuilder summaryMessage = new StringBuilder();
+        summaryMessage.append("Name: Lyla Labyrinth");
+        summaryMessage.append("\nAdd whipped cream? " + whippedCream);
+        summaryMessage.append("\nQuantity: " + quantity);
+        summaryMessage.append("\nTotal: $" + quantity*5);
+        summaryMessage.append("\nThank you!");
 
-        summaryName.setVisibility(view.VISIBLE);
-        summaryWhip.setVisibility(view.VISIBLE);
-        summaryQuantity.setVisibility(view.VISIBLE);
-        summaryThanks.setVisibility(view.VISIBLE);
+        summary.setText(summaryMessage.toString());
+
     }
 
     /**
@@ -63,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the given price on the screen.
      */
     private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.summary_price);
+        TextView priceTextView = (TextView) findViewById(R.id.summary);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
     }
 
